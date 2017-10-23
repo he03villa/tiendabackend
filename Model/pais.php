@@ -19,7 +19,7 @@
                 $consulta = "SELECT id,nombre FROM pais WHERE nombre=?";
                 $resultado = Database::getInstance()->getDb()->prepare($consulta);
                 $resultado->execute(array($values));
-                $tabla=$resultado->fetchAll(PDO::FETCH_ASSOC);
+                $tabla=$resultado->fetch(PDO::FETCH_ASSOC);
                 return $tabla;   
             } catch (Exception $ex) {
                 return FALSE;
@@ -31,7 +31,7 @@
                 $consulta = "SELECT id,nombre FROM pais WHERE id=?";
                 $resultado = Database::getInstance()->getDb()->prepare($consulta);
                 $resultado->execute(array($values));
-                $tabla=$resultado->fetchAll(PDO::FETCH_ASSOC);
+                $tabla=$resultado->fetch(PDO::FETCH_ASSOC);
                 return $tabla;   
             } catch (Exception $ex) {
                 return FALSE;
