@@ -1,6 +1,6 @@
 <?php
     require 'Database.php';
-    
+    Pais::lista();
     class Pais{
         function __construct() {
             
