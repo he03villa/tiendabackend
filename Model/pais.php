@@ -8,13 +8,13 @@
         
         public static function lista(){
             try {
-                $consulta = "SELEC id,nombre FROM pais";
+                $consulta = "SELECT id,nombre FROM pais";
                 $resultado = Database::getInstance()->getDb()->prepare($consulta);
                 $resultado->execute();
                 $tabla=$resultado->fetchAll(PDO::FETCH_ASSOC);
-                echo json_decode($tabla);   
+                echo json_encode($tabla);   
             } catch (Exception $ex) {
-                echo 'error';
+               echo 'error';
             }
         }
     }
