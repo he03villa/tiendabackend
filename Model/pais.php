@@ -38,5 +38,16 @@
             }
             
         }
+        
+        public static function Insertar($name){
+            try {
+                $consulta = "INSERT INTO pais(nombre) VALUES('".$name."')";
+                $ressultado = Database::getInstance()->getDb()->prepare($consulta);
+                $ressultado->execute();
+                return "El pagis se guardo exitosamente";
+            } catch (Exception $ex) {
+                return "error_1".$ex;
+            }
+        }
     }
 ?>
