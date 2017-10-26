@@ -4,7 +4,7 @@
     if($_SERVER['REQUEST_METHOD']=='GET'){
         if(isset($_GET['name'])){
             $name = $_GET['name'];
-            Pais::Insertar($name);
+            echo Pais::Insertar($name);
         }else echo "error_2";
     }
 ?>
