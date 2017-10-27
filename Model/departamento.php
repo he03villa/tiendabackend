@@ -5,15 +5,15 @@
         function __construct() {}
         
         public static function lista(){
-            $consulta = "SELECT d.id,d.nombre,p.nombre FROM departamento d INNER JOIN pais p on p.id=d.id";
+            $consulta = "SELECT d.id,d.nombre,p.nombre AS pais FROM departamento d INNER JOIN pais p on p.id=d.id";
             $resultado = Database::getInstance()->getDb()->prepare($consulta);
             $resultado->execute();
             $tabla=$resultado->fetchAll(PDO::FETCH_ASSOC);
             return $tabla;   
         }
         
-        public static function getDepartamentoN($name){
-            $consulta = "SELECT d.id,d.nombre,p.nombre FROM departamento d INNER JOIN pais p on p.id=d.id WHERE nombre=?";
+        public static function getDepartamentoNo($name){
+            $consulta = "SELECT d.id,d.nombre,p.nombre AS pais FROM departamento d INNER JOIN pais p on p.id=d.id WHERE d.nombre=?";
             $resultado = Database::getInstance()->getDb()->prepare($consulta);
             $resultado->execute(array($name));
             $tabla=$resultado->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@
         }
         
         public static function getDepartamentoId($id){
-            $consulta = "SELECT d.id,d.nombre,p.nombre FROM departamento d INNER JOIN pais p on p.id=d.id WHERE id=?";
+            $consulta = "SELECT d.id,d.nombre,p.nombre AS pais FROM departamento d INNER JOIN pais p on p.id=d.id WHERE d.id=?";
             $resultado = Database::getInstance()->getDb()->prepare($consulta);
             $resultado->execute(array($id));
             $tabla=$resultado->fetch(PDO::FETCH_ASSOC);
