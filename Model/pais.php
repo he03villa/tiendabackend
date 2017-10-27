@@ -49,5 +49,27 @@
                 return "error_1".$ex;
             }
         }
+        
+        public static function Actualizar($id,$name){
+            try {
+                $consulta = "UPDATE pais SET nombre='".$name."' WHERE id=".$id;
+                $ressultado = Database::getInstance()->getDb()->prepare($consulta);
+                $ressultado->execute();
+                return "El pagis se actualizado exitosamente";
+            } catch (Exception $ex) {
+                return "error_1".$ex;
+            }
+        }
+        
+        public static function Eliminar($name){
+            try {
+                $consulta = "DELETE FROM pais where nombre='".$name."'";
+                $ressultado = Database::getInstance()->getDb()->prepare($consulta);
+                $ressultado->execute();
+                return "El pagis se elimino exitosamente";
+            } catch (Exception $ex) {
+                return "error_1".$ex;
+            }
+        }
     }
 ?>
