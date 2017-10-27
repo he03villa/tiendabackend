@@ -4,7 +4,7 @@
     if($_SERVER['REQUEST_METHOD']=='GET'){
         if(isset($_GET['values'])){
             $valor = $_GET['values'];
-            $respuesta = Departamento::getPaisId($valor);
+            $respuesta = Departamento::getDepartamentoId($valor);
             if($respuesta){
                 $contenedor["respuesta"] = "CC";
                 $contenedor["dato"] = $respuesta;
