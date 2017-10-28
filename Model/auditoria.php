@@ -4,12 +4,12 @@
     class Auditoria{
         function __construct() {}
         
-         public static function lista(){
-            $consulta = "SELECT a.id,a.fecha,a.nombre,u.usuario AS usuario FROM auditoria a INNER JOIN usuario u on a.id=u.id";
-            $resultado = Database::getInstance()->getDb()->prepare($consulta);
-            $resultado->execute();
-            $tabla=$resultado->fetchAll(PDO::FETCH_ASSOC);
-            return $tabla;   
+        public static function lista(){
+           $consulta = "SELECT a.id,a.fecha,a.nombre,u.usuario AS usuario FROM auditoria a INNER JOIN usuario u on a.id=u.id";
+           $resultado = Database::getInstance()->getDb()->prepare($consulta);
+           $resultado->execute();
+           $tabla=$resultado->fetchAll(PDO::FETCH_ASSOC);
+           return $tabla;   
         }
         
         public static function getauditoriaNo($name){
