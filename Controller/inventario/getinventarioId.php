@@ -1,5 +1,5 @@
 <?php
-    require '../../Model/detalle.php';
+    require '../../Model/inventario.php';
     
     if($_SERVER['REQUEST_METHOD']=='GET'){
         if(isset($_GET['producto']) || isset($_GET['tienda'])){
