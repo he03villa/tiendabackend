@@ -12,7 +12,7 @@
            return $tabla;   
         }
         
-        public static function getdetalleId($producto,$tienda){
+        public static function getinventarioId($producto,$tienda){
            $consulta = "SELECT i.id,p.nombre AS producto,t.nombre AS tienda,i.cantida,i.presio FROM inventario i INNER JOIN tienda t ON i.tienda=t.id INNER JOIN producto p ON i.producto=p.id WHERE p.nombre=? AND t.nombre=?";
            $resultado = Database::getInstance()->getDb()->prepare($consulta);
            $resultado->execute(array($producto,$tienda));
