@@ -27,18 +27,18 @@
                 $ressultado->execute();
                 return "El pagis se guardo exitosamente";
             } catch (Exception $ex) {
-                return "error_1".$ex;
+                return "error_1".$ex->getMessage();
             }
         }
         
         public static function Actualizar($id,$inventario,$factura,$cantidad){
             try {
-                $consulta = "UPDATE detalle SET inventario='".$inventario."' factura=".$factura.",cantidad=".$cantidad." WHERE id=".$id;
+                $consulta = "UPDATE detalle SET inventario='".$inventario."',factura=".$factura.",cantidad=".$cantidad." WHERE id=".$id;
                 $ressultado = Database::getInstance()->getDb()->prepare($consulta);
                 $ressultado->execute();
                 return "El pagis se actualizado exitosamente";
             } catch (Exception $ex) {
-                return "error_1".$ex;
+                return "error_1".$ex->getMessage();
             }
         }
     }

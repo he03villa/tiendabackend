@@ -35,7 +35,7 @@
                 $ressultado->execute();
                 return "El pagis se guardo exitosamente";
             } catch (Exception $ex) {
-                return "error_1".$ex;
+                return "error_1".$ex->getMessage();
             }
         }
         
@@ -46,7 +46,7 @@
                 $ressultado->execute();
                 return "El pagis se actualizado exitosamente";
             } catch (Exception $ex) {
-                return "error_1".$ex;
+                return "error_1".$ex->getMessage();
             }
         }
         
@@ -57,7 +57,7 @@
                 $ressultado->execute();
                 return "El pagis se elimino exitosamente";
             } catch (Exception $ex) {
-                return "error_1".$ex;
+                return "error_1".$ex->getMessage();
             }
         }
     }
