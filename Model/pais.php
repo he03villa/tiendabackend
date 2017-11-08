@@ -24,8 +24,8 @@
             } catch (Exception $ex) {
                 return FALSE;
             }
-            
         }
+        
         public static function getPaisId($values){
             try {
                 $consulta = "SELECT id,nombre FROM pais WHERE id=?";
@@ -35,8 +35,7 @@
                 return $tabla;   
             } catch (Exception $ex) {
                 return FALSE;
-            }
-            
+            } 
         }
         
         public static function Insertar($name){
@@ -44,7 +43,7 @@
                 $consulta = "INSERT INTO pais(nombre) VALUES('".$name."')";
                 $ressultado = Database::getInstance()->getDb()->prepare($consulta);
                 $ressultado->execute();
-                return "El pagis se guardo exitosamente";
+                return "El pais se guardo exitosamente";
             } catch (Exception $ex) {
                 return "error_1".$ex->getMessage();
             }
@@ -55,7 +54,7 @@
                 $consulta = "UPDATE pais SET nombre='".$name."' WHERE id=".$id;
                 $ressultado = Database::getInstance()->getDb()->prepare($consulta);
                 $ressultado->execute();
-                return "El pagis se actualizado exitosamente";
+                return "El pais se actualizado exitosamente";
             } catch (Exception $ex) {
                 return "error_1".$ex->getMessage();
             }
@@ -66,7 +65,7 @@
                 $consulta = "DELETE FROM pais where nombre='".$name."'";
                 $ressultado = Database::getInstance()->getDb()->prepare($consulta);
                 $ressultado->execute();
-                return "El pagis se elimino exitosamente";
+                return "El pais se elimino exitosamente";
             } catch (Exception $ex) {
                 return "error_1".$ex->getMessage();
             }
